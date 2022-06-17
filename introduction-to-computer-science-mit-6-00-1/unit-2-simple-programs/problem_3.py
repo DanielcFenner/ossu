@@ -1,6 +1,7 @@
 balance = 999999
 annualInterestRate = 0.18
 
+# Return final balance after payment over 1 year of accruing interest
 def BalanceAfterTwelveMonths(balance, annualInterestRate, payment):
     for i in range(12):
         balance -= payment
@@ -13,6 +14,7 @@ high = (balance * (1 + monthlyInterestRate) ** 12) / 12.0
 low = balance / 12
 payment = (high + low) / 2.0
 
+# Binary search to find precise lowest payment
 while abs(BalanceAfterTwelveMonths(balance, annualInterestRate, payment)) >= epsilon:
     payment = (high + low) / 2.0
     balanceTest = BalanceAfterTwelveMonths(balance, annualInterestRate, payment)
