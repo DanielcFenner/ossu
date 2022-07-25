@@ -13,7 +13,9 @@ def bubbleSort(list):
     return list
 
 randomList = []
-for i in range(5000):
-    randomList.append(random.random() * 100)
+listSize = 10000
 
-print(bubbleSort(randomList))
+for i in range(listSize):
+    randomList.append(random.random())
+
+bubbleSort(randomList)
